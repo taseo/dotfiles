@@ -4,12 +4,14 @@ return {
     dependencies = {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
+        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-nvim-lua"
     },
     config = function()
         local cmp = require("cmp")
+        local luasnip = require("luasnip")
 
         local cmp_select = {behavior = cmp.SelectBehavior.Select}
         local cmp_mappings =
@@ -37,7 +39,12 @@ return {
         cmp.setup(
             {
                 mapping = cmp_mappings,
-                sources = cmp_sources
+                sources = cmp_sources,
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end
+                }
             }
         )
     end
