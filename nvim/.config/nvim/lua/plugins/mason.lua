@@ -13,7 +13,8 @@ return {
             mason_lspconfig.setup(
                 {
                     ensure_installed = {
-                        "clangd" -- C++ lsp
+                        "clangd", -- C and C++
+                        "ruff" -- Python
                     }
                 }
             )
