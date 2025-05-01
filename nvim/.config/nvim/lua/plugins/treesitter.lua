@@ -9,8 +9,8 @@ return {
                 ensure_installed = {
                     "c",
                     "lua",
-                    "rust",
-                    "toml"
+                    "toml",
+                    "python"
                 },
                 sync_install = false,
                 highlight = {
