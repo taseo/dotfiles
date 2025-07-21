@@ -1,7 +1,7 @@
 vim.lsp.enable(
     {
-        -- python
-        "ruff"
+        "ruff", -- python
+        "clangd" -- c, c++
     }
 )
 
